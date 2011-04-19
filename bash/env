@@ -1,0 +1,5 @@
+# Update the command prompt to be <user>:<current_directory>(git_branch) >
+# Note that the git branch is given a special color
+if type -p vcprompt >/dev/null; then
+  PS1="\u:\w \[$EYELLOW\]\$(vcprompt)\[$NO_COLOR\]\$ "
+fi

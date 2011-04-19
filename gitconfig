@@ -1,0 +1,15 @@
+[user]
+  name = Sergey Varaksin
+  email = varaksin86@gmail.com
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[alias]
+  st = status
+  ci = commit
+  br = branch
+  co = checkout
+  df = diff
+  lg = log -p
+  lc = log --stat

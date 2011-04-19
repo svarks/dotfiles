@@ -1,0 +1,18 @@
+alias ds-show='find . -name "*.DS_Store" -type f'
+alias ds-remove='find . -name "*.DS_Store" -type f -delete'
+
+# rails
+alias ss='./script/server'
+alias sc='./script/console'
+alias r='rails'
+
+# git
+alias g='git'
+alias gs='git status'
+alias gf='git fetch'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+
+# general
+alias l='ls -lah'
