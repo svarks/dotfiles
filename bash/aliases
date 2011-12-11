@@ -5,6 +5,8 @@ alias ds-remove='find . -name "*.DS_Store" -type f -delete'
 alias ss='./script/server'
 alias sc='./script/console'
 alias r='rails'
+alias br='bundle exec rake'
+alias remigrate='bundle exec rake db:migrate:reset db:seed'
 
 # git
 alias g='git'
@@ -16,3 +18,6 @@ alias gd='git diff'
 
 # general
 alias l='ls -lah'
+alias tree='tree -C'
+alias trls='tree -C|less -R'
+

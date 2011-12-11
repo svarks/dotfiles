@@ -1,0 +1,12 @@
+- tpope/vim-rvm
+- tpope/vim-fugitive
+- tpope/vim-rails
+- tpope/vim-commentary
+- tpope/vim-haml
+
+- vim-ruby/vim-ruby
+- scrooloose/nerdtree
+- wincent/Command-T
+- godlygeek/tabular
+- sjl/gundo.vim
+

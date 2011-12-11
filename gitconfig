@@ -1,3 +1,5 @@
+[core]
+  editor = mate
 [user]
   name = Sergey Varaksin
   email = varaksin86@gmail.com
@@ -13,3 +15,7 @@
   df = diff
   lg = log -p
   lc = log --stat
+  timelog = log --pretty=format:'%ai %s'
+[instaweb]
+  httpd = webrick
+
