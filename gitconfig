@@ -1,5 +1,5 @@
 [core]
-  editor = mate
+  editor = vim
 [user]
   name = Sergey Varaksin
   email = varaksin86@gmail.com

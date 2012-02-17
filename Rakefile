@@ -32,7 +32,7 @@ namespace :vim do
 
     task :update do
       log "Updating vim bundles..."
-      bundles = YAML.load_file("#{current_dir}/vim_bundles.yml")
+      bundles = YAML.load_file("#{current_dir}/vim-bundles.yml")
       bundles.each do |bundle|
         log "Checking #{bundle}...", 32
         bundle_url  = "https://github.com/#{bundle}.git"
