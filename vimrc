@@ -55,12 +55,12 @@ silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
 
 nnoremap <F5> :GundoToggle<CR>
 
-if exists(":Tabularize")
+" if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
   nmap <Leader>a: :Tabularize /:\zs<CR>
   vmap <Leader>a: :Tabularize /:\zs<CR>
-endif
+" endif
 
 " For mac users (using the 'apple' key)
 map <D-S-]> gt
@@ -79,7 +79,8 @@ map <D-0> :tablast<CR>
 " textmate like commenting
 map <D-/> <Plug>CommentaryLine
 
-autocmd VimEnter * NERDTree
-autocmd BufEnter * NERDTreeMirror
-autocmd VimEnter * wincmd w
+" autocmd vimenter * NERDTree
+" autocmd VimEnter * NERDTree
+" autocmd BufEnter * NERDTreeMirror
+" autocmd VimEnter * wincmd w
 
