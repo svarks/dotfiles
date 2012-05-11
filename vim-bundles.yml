@@ -4,6 +4,7 @@
 - tpope/vim-commentary
 - tpope/vim-haml
 - tpope/vim-endwise
+- tpope/vim-surround
 
 - kchmck/vim-coffee-script
 - taq/vim-rspec

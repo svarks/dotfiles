@@ -47,7 +47,9 @@ endif
 nnoremap <Leader>ev :tabedit $MYVIMRC<cr>
 nnoremap <Leader>sv :source $MYVIMRC<cr>
 nnoremap <Leader>p :NERDTreeToggle<cr>
+nnoremap <Leader>f :CommandTFlush<cr>
 nnoremap <F5> :GundoToggle<CR>
+nnoremap <CR> :nohlsearch<CR>
 
 if exists(":Tabularize")
   nmap <Leader>a= :Tabularize /=<CR>

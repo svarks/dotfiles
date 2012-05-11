@@ -11,7 +11,7 @@ task :default => [:install]
 desc 'Install dotfiles'
 task :install do
   log 'Copying symlinks...'
-  %w(bashrc gemrc irbrc railsrc gitconfig vim vimrc).each do |file|
+  %w(bash_profile bashrc gemrc irbrc railsrc gitconfig vim vimrc).each do |file|
     system %Q{ln -vnfs "#{current_dir}/#{file}" "$HOME/.#{file}"}
   end
   

@@ -22,7 +22,9 @@ alias gp='git push'
 alias gd='git diff'
 
 # general
+alias reload="source ~/.bashrc"
 alias l='ls -lah'
 alias tree='tree -C'
 alias trls='tree -C|less -R'
+alias cleanup='find . -name "*.DS_Store" -or -name "*.swp" -or -name "*.bak" -type f | xargs -t rm'
 
