@@ -44,10 +44,12 @@ endif
 
 " key mapping
 
-nnoremap <Leader>ev :tabedit $MYVIMRC<cr>
-nnoremap <Leader>sv :source $MYVIMRC<cr>
-nnoremap <Leader>p :NERDTreeToggle<cr>
-nnoremap <Leader>f :CommandTFlush<cr>
+nnoremap <silent> <Leader>cd :lcd %:h<CR>
+nnoremap <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
+nnoremap <Leader>ve :tabedit $MYVIMRC<CR>
+nnoremap <Leader>vs :source $MYVIMRC<CR>
+nnoremap <Leader>p :NERDTreeToggle<CR>
+nnoremap <Leader>f :CommandTFlush<CR>
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <CR> :nohlsearch<CR>
 

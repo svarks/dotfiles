@@ -3,3 +3,5 @@
 if type -p vcprompt >/dev/null; then
   PS1="\u:\w \[$EYELLOW\]\$(vcprompt)\[$NO_COLOR\]\$ "
 fi
+
+export EDITOR=vim

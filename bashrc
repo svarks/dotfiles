@@ -8,4 +8,7 @@ complete -o default -o nospace -F _git g
 . ~/dotfiles/bash/env
 . ~/dotfiles/bash/aliases
 
+# bundle exec
+[ -f ~/dotfiles/bash/bundler-exec.sh ] && source ~/dotfiles/bash/bundler-exec.sh
+
 eval "$(rbenv init -)"

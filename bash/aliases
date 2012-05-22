@@ -10,9 +10,6 @@ alias be='bundle exec'
 alias br='bundle exec rake'
 alias remigrate='bundle exec rake db:migrate:reset db:seed'
 
-# bundle exec
-[ -f ~/dotfiles/bash/bundler-exec.sh ] && source ~/dotfiles/bash/bundler-exec.sh
-
 # git
 alias g='git'
 alias gs='git status'
@@ -20,11 +17,12 @@ alias gf='git fetch'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
+alias glo='git hist origin'
 
 # general
-alias reload="source ~/.bashrc"
+alias mvr='mvim --remote-silent'
+alias reload='source ~/.bashrc'
 alias l='ls -lah'
 alias tree='tree -C'
 alias trls='tree -C|less -R'
-alias cleanup='find . -name "*.DS_Store" -or -name "*.swp" -or -name "*.bak" -type f | xargs -t rm'
-
+alias cleanup='find . -name "*.DS_Store" -or -name "*.swp" -or -name "*.bak" -type f | xargs -0 rm -v'
