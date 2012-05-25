@@ -10,5 +10,3 @@ complete -o default -o nospace -F _git g
 
 # bundle exec
 [ -f ~/dotfiles/bash/bundler-exec.sh ] && source ~/dotfiles/bash/bundler-exec.sh
-
-eval "$(rbenv init -)"

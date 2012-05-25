@@ -49,7 +49,8 @@ nnoremap <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclu
 nnoremap <Leader>ve :tabedit $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 nnoremap <Leader>p :NERDTreeToggle<CR>
-nnoremap <Leader>f :CommandTFlush<CR>
+nnoremap <Leader>t :CommandT<CR>
+nnoremap <Leader>f :CommandTFlush<CR>\|:CommandT<CR>
 nnoremap <F5> :GundoToggle<CR>
 nnoremap <CR> :nohlsearch<CR>
 

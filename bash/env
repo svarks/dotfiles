@@ -4,4 +4,12 @@ if type -p vcprompt >/dev/null; then
   PS1="\u:\w \[$EYELLOW\]\$(vcprompt)\[$NO_COLOR\]\$ "
 fi
 
+if [ ! -n "$ORIGINAL_PATH" ]; then
+  export ORIGINAL_PATH=$PATH
+fi
+export PATH=$ORIGINAL_PATH
+
 export EDITOR=vim
+export PATH=/usr/local/bin:$PATH
+
+eval "$(rbenv init -)"
