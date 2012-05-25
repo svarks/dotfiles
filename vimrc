@@ -10,7 +10,7 @@ set showcmd
 set nowrap
 set list
 set wildignore=.git,tmp,public/uploads
-" set encoding=utf-8
+set noswapfile
 
 colorscheme wombat256
 
@@ -28,8 +28,9 @@ set autoindent
 " invisibles
 set listchars=tab:▸\ ,eol:¬
 set showbreak=…
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
+
+highlight NonText     guifg=#4a4a59 ctermfg=238
+highlight SpecialKey  guifg=#4a4a59 ctermfg=238
 
 " statusline
 set laststatus=2
@@ -42,11 +43,18 @@ if has('gui_macvim')
   "let macvim_hig_shift_movement = 1
 endif
 
+" cursor change in insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
 " key mapping
 
-nnoremap <silent> <Leader>cd :lcd %:h<CR>
+let mapleader = ","
+let g:CommandTCancelMap = ['<ESC>', '<C-c>']
+
+nnoremap <Leader>w :w<CR>
 nnoremap <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
-nnoremap <Leader>ve :tabedit $MYVIMRC<CR>
+nnoremap <Leader>ve :edit $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
 nnoremap <Leader>p :NERDTreeToggle<CR>
 nnoremap <Leader>t :CommandT<CR>
