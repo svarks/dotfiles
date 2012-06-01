@@ -8,7 +8,7 @@
   status = auto
   branch = auto
 [alias]
-  hist = log --pretty=format:\"%C(yellow)%h%C(reset) [%ad] - %s%C(bold red)%d%C(reset) %Cgreen(%cr)%Creset %C(bold blue)<%an>%C(reset)\" --graph --date=short
+  hist = log --pretty=format:\"%C(yellow)%h%C(reset) [%ad] - %s%C(bold red)%d%C(reset) %Cgreen(%cr)%Creset %C(bold blue)<%an>%C(reset)\" --graph --date=short --remotes
   yday = !git hist --since '2 days ago' --author varaksin86
   st = status
   ci = commit

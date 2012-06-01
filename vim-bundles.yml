@@ -5,12 +5,12 @@
 - tpope/vim-haml
 - tpope/vim-endwise
 - tpope/vim-surround
+- tpope/vim-bundler
 
 - kchmck/vim-coffee-script
 - taq/vim-rspec
 - nono/jquery.vim
 - vim-ruby/vim-ruby
-- scrooloose/nerdtree
 - wincent/Command-T
 - godlygeek/tabular
 - sjl/gundo.vim

@@ -1,7 +1,10 @@
-# Update the command prompt to be <user>:<current_directory>(git_branch) >
-# Note that the git branch is given a special color
 if type -p vcprompt >/dev/null; then
   PS1="\u:\w \[$EYELLOW\]\$(vcprompt)\[$NO_COLOR\]\$ "
+else
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWSTASHSTATE=true
+  # GIT_PS1_SHOWUPSTREAM=verbose
+  PS1="\u:\w (\[$YELLOW\]\$(__git_ps1 "%s")\[$NO_COLOR\])\n➜ "
 fi
 
 if [ ! -n "$ORIGINAL_PATH" ]; then

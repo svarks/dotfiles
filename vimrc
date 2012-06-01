@@ -53,6 +53,7 @@ let mapleader = ","
 let g:CommandTCancelMap = ['<ESC>', '<C-c>']
 
 nnoremap <Leader>w :w<CR>
+nnoremap <Leader>cd :lcd %:h<CR>
 nnoremap <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
 nnoremap <Leader>ve :edit $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
