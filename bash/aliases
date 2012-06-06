@@ -17,7 +17,7 @@ alias gf='git fetch'
 alias gl='git pull'
 alias gp='git push'
 alias gd='git diff'
-alias glo='git hist'
+alias glo='git l'
 
 # general
 alias mvr='mvim --remote-silent'
