@@ -1,11 +1,18 @@
-if type -p vcprompt >/dev/null; then
-  PS1="\u:\w \[$EYELLOW\]\$(vcprompt)\[$NO_COLOR\]\$ "
-else
-  GIT_PS1_SHOWDIRTYSTATE=true
-  GIT_PS1_SHOWSTASHSTATE=true
-  # GIT_PS1_SHOWUPSTREAM=verbose
-  PS1="\u:\w (\[$YELLOW\]\$(__git_ps1 "%s")\[$NO_COLOR\])\n➜ "
-fi
+show_git_branch() {
+  if type -p vcprompt >/dev/null; then
+    vcprompt
+  else
+    __git_ps1 "[git:%s]"
+  fi
+}
+
+show_ruby_version() {
+  if type -p rbenv >/dev/null; then
+    echo "(ruby:$(rbenv version-name))"
+  fi
+}
+
+PS1="\u:\w $(show_ruby_version) \[$EYELLOW\]\$(show_git_branch)\[$NO_COLOR\]\n➜ "
 
 if [ ! -n "$ORIGINAL_PATH" ]; then
   export ORIGINAL_PATH=$PATH
