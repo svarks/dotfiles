@@ -12,7 +12,9 @@ show_ruby_version() {
   fi
 }
 
-PS1="\u:\w $(show_ruby_version) \[$EYELLOW\]\$(show_git_branch)\[$NO_COLOR\]\n➜ "
+GIT_PS1_SHOWDIRTYSTATE=true
+
+PS1="\u:\w $(show_ruby_version) \[$YELLOW\]\$(show_git_branch)\[$NO_COLOR\]\n➜ "
 
 if [ ! -n "$ORIGINAL_PATH" ]; then
   export ORIGINAL_PATH=$PATH
