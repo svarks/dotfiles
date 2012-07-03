@@ -4,9 +4,10 @@ fi
 
 complete -o default -o nospace -F _git g
 
+. ~/dotfiles/shell/functions
+. ~/dotfiles/shell/aliases
 . ~/dotfiles/bash/colors
 . ~/dotfiles/bash/env
-. ~/dotfiles/bash/aliases
 
 # bundle exec
 [ -f ~/dotfiles/bash/bundler-exec.sh ] && source ~/dotfiles/bash/bundler-exec.sh

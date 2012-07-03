@@ -57,7 +57,8 @@ nnoremap <Leader>cd :lcd %:h<CR>
 nnoremap <Leader>rt :!bundle list --paths=true \| xargs ctags --extra=+f --exclude=.git --exclude=log -R *<CR><CR>
 nnoremap <Leader>ve :edit $MYVIMRC<CR>
 nnoremap <Leader>vs :source $MYVIMRC<CR>
-nnoremap <Leader>p :NERDTreeToggle<CR>
+nnoremap <Leader>p "0p<CR>
+nnoremap <Leader>P "0P<CR>
 nnoremap <Leader>t :CommandT<CR>
 nnoremap <Leader>f :CommandTFlush<CR>\|:CommandT<CR>
 nnoremap <F5> :GundoToggle<CR>
