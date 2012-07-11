@@ -6,23 +6,25 @@ def log(message, color = 33)
   puts "\e[1;#{color}m#{message}\e[0m"
 end
 
-task :default => [:install]
+task :default => :install
+task :install => [:symlinks, 'vim:bundles:all']
 
-desc 'Install dotfiles'
-task :install do
+desc 'Create symlinks'
+task :symlinks do
   log 'Copying symlinks...'
-  %w(bash_profile bashrc zshrc gemrc irbrc railsrc gitconfig gitignore vim vimrc ackrc).each do |file|
-    system %Q{ln -vnfs "#{current_dir}/#{file}" "$HOME/.#{file}"}
+  files = Dir[File.join(current_dir, "symlinks/*")]
+  files << File.join(current_dir, "vim")
+  files.each do |file|
+    system %Q{ln -vnfs "#{file}" "$HOME/.#{file.split('/').last}"}
   end
-  
-  Rake::Task["vim:bundles:install"].invoke
 end
 
 namespace :vim do
   namespace :bundles do
+    task :all => [:update, :install]
 
     desc 'Install vim bundles'
-    task :install => [:update] do
+    task :install do
       log "Building Command-T extension..."
       system "cd #{current_dir}/vim/bundle/command-t/ruby/command-t" +
         " && ruby extconf.rb" +
@@ -51,4 +53,3 @@ namespace :vim do
     end
   end
 end
-

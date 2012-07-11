@@ -6,8 +6,8 @@ complete -o default -o nospace -F _git g
 
 . ~/dotfiles/shell/functions
 . ~/dotfiles/shell/aliases
-. ~/dotfiles/bash/colors
-. ~/dotfiles/bash/env
+. ~/dotfiles/shell/bash/colors
+. ~/dotfiles/shell/bash/env
 
 # bundle exec
-[ -f ~/dotfiles/bash/bundler-exec.sh ] && source ~/dotfiles/bash/bundler-exec.sh
+[ -f ~/dotfiles/shell/bash/bundler-exec.sh ] && source ~/dotfiles/shell/bash/bundler-exec.sh
