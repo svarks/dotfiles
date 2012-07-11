@@ -1,0 +1,12 @@
+.DS_Store
+
+# Ignore tags created by etags and ctags
+TAGS
+!TAGS/
+tags
+!tags/
+
+# vim
+.*.sw[a-z]
+*.un~
+Session.vim

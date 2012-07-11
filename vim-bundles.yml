@@ -8,7 +8,7 @@
 - tpope/vim-bundler
 
 - kchmck/vim-coffee-script
-- taq/vim-rspec
+- skwp/vim-rspec
 - nono/jquery.vim
 - vim-ruby/vim-ruby
 - wincent/Command-T
