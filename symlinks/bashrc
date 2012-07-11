@@ -1,13 +1,13 @@
 if [ -s /usr/local/etc/bash_completion.d ]; then
   for f in /usr/local/etc/bash_completion.d/*.bash; do source $f; done
 fi
-
 complete -o default -o nospace -F _git g
 
-. ~/dotfiles/shell/functions
-. ~/dotfiles/shell/aliases
-. ~/dotfiles/shell/bash/colors
-. ~/dotfiles/shell/bash/env
+source ~/dotfiles/shell/bash/colors
+source ~/dotfiles/shell.sh
 
-# bundle exec
-[ -f ~/dotfiles/shell/bash/bundler-exec.sh ] && source ~/dotfiles/shell/bash/bundler-exec.sh
+for f in ~/dotfiles/shell/*.sh; do
+  source $f
+done
+
+PS1="\u:\w $(show_ruby_version) \[$YELLOW\]\$(show_git_branch)\[$NO_COLOR\]\n➜ "
