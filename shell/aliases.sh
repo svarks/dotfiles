@@ -34,6 +34,9 @@ alias grc='git rebase --continue'
 alias grh='git reset --hard'
 alias gss='git status -s'
 
+#tmux
+alias tmux-reload='tmux source-file ~/.tmux.conf'
+
 # general
 alias mvr='mvim --remote-silent'
 alias vr='vim --remote-silent'
