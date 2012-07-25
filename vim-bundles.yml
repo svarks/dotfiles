@@ -8,6 +8,8 @@
 - tpope/vim-bundler
 
 - bbommarito/vim-slim
+- jgdavey/vim-turbux
+- jgdavey/tslime.vim
 - kchmck/vim-coffee-script
 - skwp/vim-rspec
 - nono/jquery.vim

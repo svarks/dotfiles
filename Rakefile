@@ -1,10 +1,6 @@
 require 'yaml'
 
-current_dir = File.expand_path('..', __FILE__)
-
-def log(message, color = 33)
-  puts "\e[1;#{color}m#{message}\e[0m"
-end
+CURRENT_DIR = File.expand_path('..', __FILE__)
 
 task :default => :install
 task :install => [:symlinks, 'vim:bundles:all']
@@ -12,8 +8,8 @@ task :install => [:symlinks, 'vim:bundles:all']
 desc 'Create symlinks'
 task :symlinks do
   log 'Copying symlinks...'
-  files = Dir[File.join(current_dir, "symlinks/*")]
-  files << File.join(current_dir, "vim")
+  files = Dir[File.join(CURRENT_DIR, "symlinks/*")]
+  files << File.join(CURRENT_DIR, "vim")
   files.each do |file|
     system %Q{ln -vnfs "#{file}" "$HOME/.#{file.split('/').last}"}
   end
@@ -21,12 +17,12 @@ end
 
 namespace :vim do
   namespace :bundles do
-    task :all => [:update, :install]
+    task :all => [:update, :cleanup, :install]
 
     desc 'Install vim bundles'
     task :install do
       log "Building Command-T extension..."
-      system "cd #{current_dir}/vim/bundle/command-t/ruby/command-t" +
+      system "cd #{CURRENT_DIR}/vim/bundle/command-t/ruby/command-t" +
         " && ruby extconf.rb" +
         " && make clean" +
         " && make"
@@ -34,12 +30,9 @@ namespace :vim do
 
     task :update do
       log "Updating vim bundles..."
-      bundles = YAML.load_file("#{current_dir}/vim-bundles.yml")
-      bundles.each do |bundle|
-        log "Checking #{bundle}...", 32
-        bundle_url  = "https://github.com/#{bundle}.git"
-        bundle_name = bundle.split('/').last.downcase
-        bundle_path = "#{current_dir}/vim/bundle/#{bundle_name}"
+      get_bundles.each do |bundle_url, bundle_name|
+        log "Checking #{bundle_name}...", 32
+        bundle_path = "#{CURRENT_DIR}/vim/bundle/#{bundle_name}"
         if (File.exists?(bundle_path))
           system "cd #{bundle_path} && git pull"
         else
@@ -48,8 +41,28 @@ namespace :vim do
       end
     end
 
-    task :clean do
-      system "rm -vrf #{current_dir}/vim/bundle/*"
+    task :cleanup do
+      bundle_names = get_bundles.map {|_, name| name }
+      Dir["#{CURRENT_DIR}/vim/bundle/*"].each do |dir|
+        bundle_name = dir.split('/').last
+        unless bundle_names.include? bundle_name
+          log "deleting untracked bundle #{bundle_name}.."
+          system "rm -rf #{dir}"
+        end
+      end
     end
   end
+end
+
+def get_bundles
+  bundles = YAML.load_file("#{CURRENT_DIR}/vim-bundles.yml")
+  bundles.map do |bundle|
+    url  = "https://github.com/#{bundle}.git"
+    name = bundle.split('/').last.downcase
+    [url, name]
+  end
+end
+
+def log(message, color = 33)
+  puts "\e[1;#{color}m#{message}\e[0m"
 end
