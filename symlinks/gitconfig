@@ -8,8 +8,11 @@
   status = auto
   branch = auto
 [alias]
-  l = log --graph --date=short --all --pretty=format:\"%C(yellow)%h%C(reset) [%ad] - %s%C(bold blue)%d%C(reset) %C(yellow)<%an>%C(reset) %C(white)(%ar)%Creset\"
-  yday = !git l --since '2 days ago' --author varaksin86
+  l = "!. ~/dotfiles/shell/githelpers.sh && pretty_git_log"
+  la = "!git l --all"
+  r = "!git l -30"
+  ra = "!git l -30 --all"
+
   st = status
   ci = commit
   br = branch
