@@ -43,7 +43,7 @@ alias tmux-reload='tmux source-file ~/.tmux.conf'
 # general
 alias mvr='mvim --remote-silent'
 alias vr='vim --remote-silent'
-alias reload='source ~/.bashrc'
+alias reload='source ~/.${SHELL}rc'
 alias l='ls -lahG'
 alias tree='tree -C'
 alias trls='tree -C|less -R'
