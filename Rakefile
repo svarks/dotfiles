@@ -2,8 +2,7 @@ require 'yaml'
 
 CURRENT_DIR = File.expand_path('..', __FILE__)
 
-task :default => :install
-task :install => [:symlinks, 'vim:bundles:all']
+task :default => [:symlinks, 'vim:bundles:install']
 
 desc 'Create symlinks'
 task :symlinks do
@@ -17,10 +16,10 @@ end
 
 namespace :vim do
   namespace :bundles do
-    task :all => [:update, :cleanup, :install]
+    task :install => [:update, :cleanup, :compile]
 
-    desc 'Install vim bundles'
-    task :install do
+    desc 'Compile vim bundles'
+    task :compile do
       log "Building Command-T extension..."
       system "cd #{CURRENT_DIR}/vim/bundle/command-t/ruby/command-t" +
         " && ruby extconf.rb" +
