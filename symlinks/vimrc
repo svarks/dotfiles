@@ -9,6 +9,7 @@ set number
 set showcmd
 set nowrap
 set list
+set backspace=indent,eol,start
 set wildignore=.git,tmp,public/uploads
 set noswapfile
 
