@@ -1,6 +1,6 @@
 # vim: set filetype=zsh :
 
-export SHELL=zsh # fix for the iterm2
+export SHELL=`which zsh` # fix for the iterm2
 
 source ~/dotfiles/shell.sh
 
