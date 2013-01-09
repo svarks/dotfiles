@@ -6,7 +6,7 @@
 - tpope/vim-surround
 - tpope/vim-bundler
 
-- bbommarito/vim-slim
+- slim-template/vim-slim
 - jgdavey/vim-turbux
 - jgdavey/tslime.vim
 - kchmck/vim-coffee-script
@@ -23,6 +23,7 @@
 - scrooloose/syntastic
 # - Lokaltog/vim-easymotion
 # - ervandew/supertab
+- ap/vim-css-color
 
 # snipmate
 - tomtom/tlib_vim

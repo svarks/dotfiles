@@ -56,7 +56,7 @@ end
 def get_bundles
   bundles = YAML.load_file("#{CURRENT_DIR}/vim-bundles.yml")
   bundles.map do |bundle|
-    url  = "https://github.com/#{bundle}.git"
+    url  = "git://github.com/#{bundle}.git"
     name = bundle.split('/').last.downcase
     [url, name]
   end
