@@ -11,3 +11,8 @@ fi
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)"
 fi
+
+# ruby
+
+# ruby 1.9.3 requires proper certs (brew install curl-ca-bundle)
+export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem

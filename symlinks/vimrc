@@ -33,6 +33,8 @@ set showbreak=…
 highlight NonText     guifg=#4a4a59 ctermfg=238
 highlight SpecialKey  guifg=#4a4a59 ctermfg=238
 
+au BufRead,BufNewFile *.hamlc setf haml
+
 " statusline
 set laststatus=2
 set statusline=%<\ %n:%f\ %m%r%y%=%-35.(line:\ %l\ of\ %L,\ col:\ %c%V\ (%P)%)
@@ -79,6 +81,11 @@ if exists(":Tabularize")
   vmap <Leader>a: :Tabularize /:\zs<CR>
 endif
 
+map <C-J> :bnext<CR>
+map <C-K> :bprev<CR>
+map <C-L> :tabn<CR>
+map <C-H> :tabp<CR>
+
 " For mac users (using the 'apple' key)
 map <D-S-]> gt
 map <D-S-[> gT
@@ -92,4 +99,3 @@ map <D-7> 7gt
 map <D-8> 8gt
 map <D-9> 9gt
 map <D-0> :tablast<CR>
-

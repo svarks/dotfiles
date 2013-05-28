@@ -16,16 +16,7 @@ end
 
 namespace :vim do
   namespace :bundles do
-    task :install => [:update, :cleanup, :compile]
-
-    desc 'Compile vim bundles'
-    task :compile do
-      log "Building Command-T extension..."
-      system "cd #{CURRENT_DIR}/vim/bundle/command-t/ruby/command-t" +
-        " && ruby extconf.rb" +
-        " && make clean" +
-        " && make"
-    end
+    task :install => [:update, :cleanup]
 
     task :update do
       log "Updating vim bundles..."
