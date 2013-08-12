@@ -15,4 +15,6 @@ fi
 # ruby
 
 # ruby 1.9.3 requires proper certs (brew install curl-ca-bundle)
-export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
+if [ -f /usr/local/etc/openssl/certs/cert.pem ]; then
+  export SSL_CERT_FILE=/usr/local/etc/openssl/certs/cert.pem
+fi
