@@ -3,9 +3,7 @@
 export SHELL=`which zsh` # fix for the iterm2
 
 source ~/dotfiles/shell.sh
-
-export HISTFILE=~/.zsh_history
-export HISTSIZE=SAVEHIST=10000
+source ~/dotfiles/shell/zsh/history.sh
 
 setopt incappendhistory
 setopt prompt_subst

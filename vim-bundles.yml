@@ -14,6 +14,8 @@
 - skwp/vim-rspec
 - nono/jquery.vim
 - vim-ruby/vim-ruby
+- wavded/vim-stylus
+- digitaltoad/vim-jade
 
 # misc
 - kien/ctrlp.vim
