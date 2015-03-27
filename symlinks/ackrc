@@ -4,6 +4,8 @@
 --type-set=sass=.sass,.scss
 --type-set=coffee=.coffee
 --type-set=handlebars=.hbs
+--type-set=slim=.slim
+--type-set=thor=.thor
 
 --ignore-dir=log
 --ignore-dir=tmp
