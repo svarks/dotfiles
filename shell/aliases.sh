@@ -9,6 +9,7 @@ alias b='bundle'
 alias be='bundle exec'
 alias br='bundle exec rake'
 alias remigrate='bundle exec rake db:migrate:reset db:seed'
+alias rtest='bundle exec ruby -Itest'
 
 # git
 alias g='git'
