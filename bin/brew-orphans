@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+packages = %x(brew ls -1).split("\n")
+
+dependants = {}
+
+def colorize(string, index)
+  "\e[#{index}m#{string}\e[0m"
+end
+
+packages.each do |package|
+  used_by = %x(brew uses --installed #{package}).split("\n")
+
+  if used_by.empty?
+    puts "#{colorize(package, 32)}"
+  else
+    dependants[package] = used_by
+  end
+end
+
+if ARGV.include?('--all')
+  dependants.each do |package, used_by|
+    puts "#{colorize(package, 91)}: #{used_by.join(' ')}"
+  end
+end

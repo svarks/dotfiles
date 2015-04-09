@@ -9,6 +9,7 @@ task :symlinks do
   log 'Copying symlinks...'
   files = Dir[File.join(CURRENT_DIR, "symlinks/*")]
   files << File.join(CURRENT_DIR, "vim")
+  files << File.join(CURRENT_DIR, "bin")
   files.each do |file|
     system %Q{ln -vnfs "#{file}" "$HOME/.#{file.split('/').last}"}
   end
