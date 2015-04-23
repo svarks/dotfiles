@@ -16,6 +16,8 @@
 - vim-ruby/vim-ruby
 - wavded/vim-stylus
 - digitaltoad/vim-jade
+- mxw/vim-jsx
+- pangloss/vim-javascript
 
 # misc
 - kien/ctrlp.vim
