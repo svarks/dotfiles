@@ -13,3 +13,11 @@ show_ruby_version() {
     echo "(ruby:$(rbenv version-name))"
   fi
 }
+
+gifify() {
+  if [[ "$1" && "$2" ]]; then
+    ffmpeg -i "$1" -filter:v scale=800:-1 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > "$2"
+  else
+    echo "Usage: gifify [filename] [outfile]"
+  fi
+}
